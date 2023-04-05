@@ -72,9 +72,7 @@ public class BombJMenuBar extends JMenuBar {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				StaticTool.allrow = 9;
-				StaticTool.allcol = 9;
-				StaticTool.allcount = 10;
+				StaticTool.setLevel(1, 0, 0, 0);
 				mainFrame.reStartGame();
 			}
 		});
@@ -84,9 +82,7 @@ public class BombJMenuBar extends JMenuBar {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				StaticTool.allrow = 16;
-				StaticTool.allcol = 16;
-				StaticTool.allcount = 40;
+				StaticTool.setLevel(2, 0, 0, 0);
 				mainFrame.reStartGame();
 			}
 		});
@@ -96,9 +92,7 @@ public class BombJMenuBar extends JMenuBar {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				StaticTool.allrow = 16;
-				StaticTool.allcol = 30;
-				StaticTool.allcount = 99;
+				StaticTool.setLevel(3, 0, 0, 0);
 				mainFrame.reStartGame();
 			}
 		});

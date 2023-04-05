@@ -1,12 +1,11 @@
 package tools;
 
 import bean.MineLable;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class layMineTest {
+public class LayMineTest {
     private int countMine(MineLable[][] lable) {
         int count = 0;
         for (int i = 0; i < lable.length; i++) {
@@ -31,6 +30,7 @@ public class layMineTest {
 
     @Test
     public void test1(){
+        StaticTool.allrow = 9; StaticTool.allcol = 9; StaticTool.allcount = 10;
         MineLable[][] labels = createLabels(StaticTool.allrow, StaticTool.allcol);
         MineLable[][] results = LayBomb.lay(labels, 0, 0);
         assertEquals(StaticTool.allcount, countMine(results));
@@ -39,6 +39,7 @@ public class layMineTest {
 
     @Test
     public void test2(){
+        StaticTool.allrow = 9; StaticTool.allcol = 9; StaticTool.allcount = 10;
         MineLable[][] labels = createLabels(StaticTool.allrow, StaticTool.allcol);
         MineLable[][] results = LayBomb.lay(labels, 4, 5);
         assertEquals(StaticTool.allcount, countMine(results));

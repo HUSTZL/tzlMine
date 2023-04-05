@@ -76,9 +76,7 @@ public class UserDefinedListener implements ActionListener {
 				return;
 			}
 			userDefinedJDialog.dispose();
-			StaticTool.allrow = row;
-			StaticTool.allcol = col;
-			StaticTool.allcount = mine;
+			StaticTool.setLevel(0, row, col, mine);
 
 			mainFrame.reStartGame();
 		}

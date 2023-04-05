@@ -302,29 +302,21 @@ public class Listener implements MouseListener {
 					.setIcon(StaticTool.winFaceIcon);
 			int level = StaticTool.getLevel();
 			if (level != 0) {
+				String name = null;
 				if (level == 1) {
-					String name = JOptionPane.showInputDialog(mainFrame,
+					name = JOptionPane.showInputDialog(mainFrame,
 							"好厉害！初级扫雷完成，请留下大名！");
-					if (name != null) {
-						StaticTool.treeSetC.add(new HeroBean(
-								StaticTool.timecount, name));
-					}
 				} else if (level == 2) {
-					String name = JOptionPane.showInputDialog(mainFrame,
+					name = JOptionPane.showInputDialog(mainFrame,
 							"好厉害！中级扫雷完成，请留下大名！");
-					if (name != null) {
-						StaticTool.treeSetZ.add(new HeroBean(
-								StaticTool.timecount, name));
-					}
 				} else if (level == 3) {
-					String name = JOptionPane.showInputDialog(mainFrame,
+					name = JOptionPane.showInputDialog(mainFrame,
 							"好厉害！高级扫雷完成，请留下大名！");
-					if (name != null) {
-						StaticTool.treeSetG.add(new HeroBean(
-								StaticTool.timecount, name));
-					}
 				}
-
+				if (name != null) {
+					StaticTool.HeroSet(new HeroBean(
+							StaticTool.timecount, name));
+				}
 			}
 
 		}

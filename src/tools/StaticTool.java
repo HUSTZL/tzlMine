@@ -52,12 +52,48 @@ public class StaticTool {
 	public static TreeSet<HeroBean> treeSetC = new TreeSet<HeroBean>();
 	public static TreeSet<HeroBean> treeSetZ = new TreeSet<HeroBean>();
 	public static TreeSet<HeroBean> treeSetG = new TreeSet<HeroBean>();
+
+	public static void HeroSet(HeroBean heroBean) {
+		if (getLevel() == 1){
+			treeSetC.add(heroBean);
+		}
+		else if (getLevel() == 2) {
+			treeSetZ.add(heroBean);
+		}
+		else if (getLevel() == 3) {
+			treeSetG.add(heroBean);
+		}
+	}
+
 	static {
 
 		treeSetC.add(new HeroBean(999, "ÄäÃû"));
 		treeSetZ.add(new HeroBean(999, "ÄäÃû"));
 		treeSetG.add(new HeroBean(999, "ÄäÃû"));
 
+	}
+
+	public static void setLevel(int level, int row, int col, int mine) {
+		if (level == 1) {
+			StaticTool.allrow = 9;
+			StaticTool.allcol = 9;
+			StaticTool.allcount = 10;
+		}
+		else if (level == 2) {
+			StaticTool.allrow = 16;
+			StaticTool.allcol = 16;
+			StaticTool.allcount = 40;
+		}
+		else if (level == 3) {
+			StaticTool.allrow = 16;
+			StaticTool.allcol = 30;
+			StaticTool.allcount = 99;
+		}
+		else if (level == 0) {
+			StaticTool.allrow = row;
+			StaticTool.allcol = col;
+			StaticTool.allcount = mine;
+		}
 	}
 
 	public static int getLevel() {
